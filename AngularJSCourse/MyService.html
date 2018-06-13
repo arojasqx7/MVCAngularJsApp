@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html ng-app="ServiceApp">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body ng-controller="svcController">
+   <input type="text" ng-model="a" />
+   <input type="text" ng-model="b" />
+   <input type="button" ng-click="Add(a,b)" value="Add!"/>
+   <input type="button" ng-click="Sub(a,b)" value="Sub!" />
+   <span>{{result}}</span>
+</body>
+</html>
+
+<script src="Scripts/angular.min.js"></script>
+<script src="Scripts/Services.js"></script>
