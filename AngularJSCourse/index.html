@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body ng-app ng-init="a=15; array=[89,45,96,30]">
+    <div>
+        {{8+65+a}}
+    </div>
+    <hr />
+
+    <div>
+        <input type="text" ng-model="x"/>
+        <br />
+        {{x}}
+    </div>
+
+    <div ng-show ="false">
+        <span ng-bind="x"></span>
+    </div>
+    <hr />
+
+    <div>
+        <ul ng-repeat="k in array">
+            <li ng-if="k > 80">{{k}}</li>
+        </ul>
+    </div>
+    <hr />
+
+    <div>
+        <input type="radio" ng-model="Gender" value="Male"/> M
+        <br />
+        <input type="radio" ng-model="Gender" value="Female" />F
+        <br />
+        <p>You have selected:    {{Gender}} {{x}} </p>
+    </div>
+</body>
+</html>
+<script src="Scripts/angular.min.js"></script>

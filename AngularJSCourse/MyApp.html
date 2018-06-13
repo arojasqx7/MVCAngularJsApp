@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div ng-controller="EmployeesController" class="col-md-6">
+        <input type="button" value="Get Employees" ng-click="GetEmployees()" />
+        <hr />
+        <input type="text" ng-model="search" placeholder="Search Employee.." class="form-control"/>
+
+        <!--<select ng-model="drop" ng-options="emp.Id as emp.FirstName for emp in EmployeeData"></select>
+        {{drop}}-->
+
+        <br />
+        <br />
+        <table class="table table-striped">
+            <tr style="cursor:pointer;">
+                <td ng-click="Sort('Id')"><a>Id</a></td>
+                <td ng-click="Sort('FirstName')"><a>First Name</a></td>
+                <td ng-click="Sort('LastName')"><a>Last Name</a></td>
+                <td ng-click="Sort('Age')"><a>Age</a></td>
+                <td ng-click="Sort('DepartmentId')"><a>Dept Id</a></td>
+            </tr>
+            <tr ng-repeat="emp in EmployeeData | filter:search | orderBy: order : AscOrDesc">
+                <td>{{emp.Id}}</td>
+                <td>{{emp.FirstName | uppercase}}</td>
+                <td>{{emp.LastName | lowercase}}</td>
+                <td>{{emp.Age | number}}</td>
+                <td>{{emp.DepartmentId}}</td>
+            </tr>
+        </table>
+
+
+    </div>
+</body>
+</html>
+
+
+<script src="Scripts/angular.min.js"></script>
+<script src="Scripts/MyApp.js"></script>
+<script src="Scripts/jquery-1.10.2.min.js"></script>
+<script src="Scripts/bootstrap.min.js"></script>

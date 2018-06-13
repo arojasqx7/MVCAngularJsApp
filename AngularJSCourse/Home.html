@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body ng-controller="MyController">
+    {{MyVar}}
+
+    <div>
+        <input type="text" ng-model="x" />
+        <span ng-bind="x"></span>
+    </div>
+    <hr />
+    <input type="text" ng-model="x" />
+    <input type="text" ng-model="y" />
+    <input type="button" value="Show Suma!" ng-click="Suma(x,y)" />
+</body>
+</html>
+
+<script src="Scripts/angular.min.js"></script>
+<script src="Scripts/MyApp.js"></script>
