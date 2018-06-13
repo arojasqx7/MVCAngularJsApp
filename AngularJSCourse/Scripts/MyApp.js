@@ -1,4 +1,4 @@
-﻿var app = angular.module('MyApp', []);
+﻿var app = angular.module('MyApp', ['angularUtils.directives.dirPagination']);
 
 app.controller('EmployeesController', function ($scope, $http) {
 

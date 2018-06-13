@@ -24,7 +24,8 @@
                 <td ng-click="Sort('Age')"><a>Age</a></td>
                 <td ng-click="Sort('DepartmentId')"><a>Dept Id</a></td>
             </tr>
-            <tr ng-repeat="emp in EmployeeData | filter:search | orderBy: order : AscOrDesc">
+            <!--<tr ng-repeat="emp in EmployeeData | filter:search | orderBy: order : AscOrDesc">-->
+            <tr dir-paginate="emp in EmployeeData | filter:search | orderBy: order : AscOrDesc | itemsPerPage:2">
                 <td>{{emp.Id}}</td>
                 <td>{{emp.FirstName | uppercase}}</td>
                 <td>{{emp.LastName | lowercase}}</td>
@@ -33,6 +34,9 @@
             </tr>
         </table>
 
+        <dir-pagination-controls max-size="2" direction-links="true" boundary-links="true" style="float:right;">
+
+        </dir-pagination-controls>
 
     </div>
 </body>
@@ -43,3 +47,4 @@
 <script src="Scripts/MyApp.js"></script>
 <script src="Scripts/jquery-1.10.2.min.js"></script>
 <script src="Scripts/bootstrap.min.js"></script>
+<script src="Scripts/dirPagination.js"></script>
