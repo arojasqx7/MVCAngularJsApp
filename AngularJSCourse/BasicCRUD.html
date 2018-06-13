@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html ng-app="basicCRUD">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body ng-controller="departmentsController">
+    <hr />
+    <div class="col-md-6">
+        <input type="text" ng-model="search" placeholder="Search.." class="form-control"/>
+        <br />
+        <table class="table table-striped">
+            <tr>
+                <td>Id</td>
+                <td>Department Name</td>
+                <td>Building Name</td>
+                <td>Actions</td>
+            </tr>
+            <tr ng-repeat="emp in Depts | filter:search">
+                <td><a ng-click="GetByDeptId(emp.Id)" href="#">{{emp.Id}}</a></td>
+                <td>{{emp.DepartmentName}}</td>
+                <td>{{emp.BuildingName}}</td>
+                <td><a ng-click="DeleteDeptById(emp.Id)" href="#">Delete</a></td>
+            </tr>
+        </table>
+        <br />
+        <span> You selected: {{Dep.DepartmentName}}</span>
+    </div>
+</body>
+</html>
+
+<script src="Scripts/angular.min.js"></script>
+<script src="Scripts/basicCRUD.js"></script>
